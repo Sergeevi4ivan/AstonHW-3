@@ -1,7 +1,15 @@
 eureka:
   client:
     enabled: false
+
+
 spring:
+  application:
+    name: apizza-notification
+
+  kafka:
+    bootstrap-servers: localhost:29092
+
   mail:
     protocol: smtps
     host: smtp.mail.ru
@@ -15,5 +23,4 @@ spring:
           starttls:
             enable: true
         debug: true
-  application:
-    name: apizza-notification
+
