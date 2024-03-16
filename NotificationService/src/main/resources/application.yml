@@ -1,0 +1,19 @@
+eureka:
+  client:
+    enabled: false
+spring:
+  mail:
+    protocol: smtps
+    host: smtp.mail.ru
+    port: 465
+    username: notifier.bayun@inbox.ru
+    password: bSvrFkmcnpJtdsTVRBM3
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+        debug: true
+  application:
+    name: apizza-notification

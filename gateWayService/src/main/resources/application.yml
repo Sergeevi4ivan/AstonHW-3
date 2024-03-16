@@ -1,0 +1,39 @@
+server:
+  port: 8088
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8080/eureka
+
+spring:
+  application:
+    name: apizza-gateway
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id:
+              apizza-authService
+            uri:
+              lb://apizza-authService
+            predicates:
+              - Path=/apizza-authService/**
+          - id:
+              apizza-orderService
+            uri:
+              lb://apizza-orderService
+            predicates:
+              - Path=/apizza-orderService/**
+          - id:
+              apizza-statService
+            uri:
+              lb://apizza-statService
+            predicates:
+              - Path=/apizza-statService/**
+          - id:
+              apizza-notificationService
+            uri:
+              lb://apizza-notificationService
+            predicates:
+              - Path=/apizza-notificationService/**
